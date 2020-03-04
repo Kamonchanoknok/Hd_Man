@@ -60,7 +60,7 @@ class _RegisterScrennState extends State<RegisterScrenn> {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
-        padding: EdgeInsets.symmetric(vertical: 10.0),
+        padding: EdgeInsets.symmetric(vertical: 1.0),
         width: double.infinity,
         child: RaisedButton(
             elevation: 5.0,
@@ -126,10 +126,14 @@ class _RegisterScrennState extends State<RegisterScrenn> {
                     SizedBox(
                       height: 15,
                     ),
-                    _buildFormfield('รหัสผ่านเข้าสู่ระบบ', null),
+                    _buildFormfield('Email', null),
+                    _buildFormfield('รหัสผ่าน', null),
+                    _buildFormfield('ยืนยันรหัสผ่าน', null),
                     _buildFormfield('ที่อยู่', null),
                     _buildFormfield('เบอร์โทรติดต่อ', null),
-                    _buildButton(() => navigateToHome(), 'บันทึกข้อมูล')
+                    _buildButton(
+                        () => Navigator.of(context).pop(), 'บันทึกข้อมูล'),
+                    _buildButton(() => Navigator.of(context).pop(), 'ย้อนกลับ')
                   ],
                 ),
               ),

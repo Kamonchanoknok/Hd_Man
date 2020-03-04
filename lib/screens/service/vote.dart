@@ -36,7 +36,7 @@ class _VoteScreenState extends State<VoteScreen> {
               Icons.account_circle,
               size: data.width / 4,
             ),
-            textFix('ร้าน Tdot.com', 30, null, true),
+            textFix('ร้าน Nokdot.com', 30, null, true),
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: textFix(

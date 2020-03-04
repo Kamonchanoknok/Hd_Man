@@ -14,7 +14,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
   //
   int setlist_promotion = 0;
 
-  String userName = "Tdot";
+  String userName = "Nok Tester";
   List ListPromotion = [
     {'image': 'tester01.png'},
   ];
@@ -164,7 +164,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
                         SizedBox(
                           height: 5,
                         ),
-                        textFix('ร้าน Tdot.com', 18, null, true),
+                        textFix('ร้าน Nokdot.com', 18, null, true),
                         textFix('บริการ ซ่อมคอมพิวเตอร์', 16, null, false)
                       ],
                     ),

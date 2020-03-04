@@ -2,10 +2,11 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:hd_man/screens/auth/register.dart';
 import 'package:hd_man/utils/stype.dart';
 
 import 'package:hd_man/widget/TextFix.dart';
-import 'package:hd_man/screens/auth/otp.dart';
+//import 'package:hd_man/screens/auth/otp.dart';
 
 class AuthScreen extends StatefulWidget {
   @override
@@ -15,7 +16,7 @@ class AuthScreen extends StatefulWidget {
 class _AuthScreenState extends State<AuthScreen> {
   void navigateTo(BuildContext context) {
     Navigator.push(context, CupertinoPageRoute(builder: (context) {
-      return OtpScreens();
+      return RegisterScrenn();
     }));
   }
 
@@ -95,7 +96,7 @@ class _AuthScreenState extends State<AuthScreen> {
             borderRadius: BorderRadius.circular(30.0),
           ),
           color: Colors.white,
-          child: textFix('รับรหัสยืนยันตัวตน', 20, Colors.red, true)),
+          child: textFix('เข้าสู่ระบบ', 20, Colors.red, true)),
     );
   }
 
@@ -127,6 +128,34 @@ class _AuthScreenState extends State<AuthScreen> {
     );
   }
 
+  Widget _buildPasswordTF() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Container(
+          alignment: Alignment.centerLeft,
+          decoration: kBoxDecorationStyle,
+          height: 60.0,
+          child: TextField(
+            keyboardType: TextInputType.emailAddress,
+            style: GoogleFonts.chakraPetch(
+              color: Colors.black,
+            ),
+            decoration: InputDecoration(
+              border: InputBorder.none,
+              contentPadding: EdgeInsets.only(top: 14.0),
+              prefixIcon: Icon(
+                Icons.lock,
+              ),
+              hintText: 'กรุณากรอกรหัสผ่าน',
+              hintStyle: GoogleFonts.chakraPetch(),
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
   Widget _buildSignInBtn(Function onTap) {
     return GestureDetector(
       onTap: onTap,
@@ -134,7 +163,7 @@ class _AuthScreenState extends State<AuthScreen> {
         text: TextSpan(
           children: [
             TextSpan(
-                text: 'หากเป็นสมัครชิกด้วย Email อยู่แล้ว ',
+                text: 'หากยังไม่ได้เป็นสมัครชิก ',
                 style: fontStyles(16.0, Colors.redAccent, false)),
             TextSpan(
                 text: 'คลิก', style: fontStyles(16.0, Colors.redAccent, true)),
@@ -212,8 +241,12 @@ class _AuthScreenState extends State<AuthScreen> {
                           height: 30,
                         ),
                         _buildEmailTF(),
-                        _buildButton(() => navigateTo(context)),
-                        _buildSignInBtn(() => navigateToHome()),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        _buildPasswordTF(),
+                        _buildButton(() => navigateToHome()),
+                        _buildSignInBtn(() => navigateTo(context)),
                         SizedBox(
                           height: 10,
                         ),

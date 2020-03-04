@@ -55,7 +55,7 @@ class _SettingScreenState extends State<SettingScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: <Widget>[
-                  textFix('Tdot', 20, null, true),
+                  textFix('Nokdot', 20, null, true),
                   Row(
                     children: <Widget>[
                       textFix('แก้ไขข้อมูล', 14, null, false),
