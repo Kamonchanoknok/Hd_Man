@@ -21,7 +21,7 @@ class _AuthScreenState extends State<AuthScreen> {
   }
 
   void navigateToHome() {
-    Navigator.of(context).pushReplacementNamed('/home');
+    Navigator.of(context).pushReplacementNamed('/home'); // ไปหน้า home
   }
 
   final kBoxDecorationStyle = BoxDecoration(
@@ -119,7 +119,7 @@ class _AuthScreenState extends State<AuthScreen> {
               prefixIcon: Icon(
                 Icons.email,
               ),
-              hintText: 'กรุณากรอกอีเมลล์',
+              hintText: 'กรุณากรอกอีเมล์',
               hintStyle: GoogleFonts.chakraPetch(),
             ),
           ),
@@ -163,7 +163,7 @@ class _AuthScreenState extends State<AuthScreen> {
         text: TextSpan(
           children: [
             TextSpan(
-                text: 'หากยังไม่ได้เป็นสมัครชิก ',
+                text: 'หากยังไม่ได้เป็นสมาชิก ',
                 style: fontStyles(16.0, Colors.redAccent, false)),
             TextSpan(
                 text: 'คลิก', style: fontStyles(16.0, Colors.redAccent, true)),
@@ -201,11 +201,11 @@ class _AuthScreenState extends State<AuthScreen> {
     return Scaffold(
       body: AnnotatedRegion<SystemUiOverlayStyle>(
         value: SystemUiOverlayStyle.light,
-        child: GestureDetector(
+        child: GestureDetector( // ทัสหน้าจอ
           onTap: () => FocusScope.of(context).unfocus(),
-          child: Stack(
+          child: Stack( // ทุกอย่างซ้อนกัน มาก่อนอยู่หลัง มาหลังหน้า
             children: <Widget>[
-              Container(
+              Container( // แต่งสี
                 height: double.infinity,
                 decoration: BoxDecoration(
                   gradient: LinearGradient(
@@ -221,7 +221,7 @@ class _AuthScreenState extends State<AuthScreen> {
                   ),
                 ),
               ),
-              Center(
+              Center( //หน้าล็อกอิน
                 child: Container(
                   width: double.infinity,
                   child: SingleChildScrollView(
@@ -256,7 +256,8 @@ class _AuthScreenState extends State<AuthScreen> {
                     ),
                   ),
                 ),
-              )
+              ),
+
             ],
           ),
         ),
